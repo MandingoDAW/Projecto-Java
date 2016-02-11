@@ -22,12 +22,12 @@ package projectom03uf5;
         public static final int NOTE_OFF = 0x80;
         public static final String[] NOTE_NAMES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
         private String pathMidi = "";
-        String notes[]= new String[]; 
+        //String notes[]= new String[]; 
         
         
     public static void main(String[] args) throws Exception {
         Sequence sequence = MidiSystem.getSequence(new File("test.mid"));
-        sequence = pathMidi;
+        //sequence = pathMidi;
         
         
         int trackNumber = 0;
