@@ -1,6 +1,15 @@
 En la main creamos un objeto test donde le passaremos el nombre del archivo midi(atributo de la clase test), 
 el constructor de esta clase relizara el test extrayendo las notas 
-i guardandolas como numeros en un private array(atributo de clase),haremos un getter de las notas de esta clase
+i guardandolas como numeros en un private array///////Posteriormente usaremos comparable y collections\\\\\\\\\\
+(atributo de clase),haremos un getter de las notas de esta clase
 Despues en el main llamaremos el getter par obtener las notas, cuando las tengamos crearemos el objeto createxml y le pasaremos 
 por el constructor las notas i el nombre del xml de salida(los dos seran atributos de clase) en la clase createxml traduciremos 
 las notas que recibimos como numeros a string para poderlos guardar correctamente en el xml.
+
+
+• Utilització de classes internes
+• Creació i utilització de classes genèriques.
+• Utilització com a mínim de 3 tipus diferents de estructures de dades dinàmiques.
+• Utilització de les interfícies Comparable i Comparator.
+
+https://www.youtube.com/watch?v=bTu-fz1JmWQ-->COlecciones

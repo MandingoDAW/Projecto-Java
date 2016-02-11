@@ -1,6 +1,7 @@
 package projectom03uf5;
 
 import java.io.File;
+import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -21,9 +22,9 @@ import org.w3c.dom.Element;
 
 public class creacioXML  {
 
-    public creacioXML() {
+    public creacioXML(ArrayList _key, ArrayList _nameKey) {
 
-        
+        int sized=_nameKey.size();
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -33,14 +34,14 @@ public class creacioXML  {
             xml.appendChild(elementArrel);
                 
                  
-                for(int i=0;i<notas.length;i++){
+                for(int i=0;i<20;i++){
                     Element nota = xml.createElement("nota");
                     elementArrel.appendChild(nota);
                     int idn=i+1; 
                     String sIdn = String.valueOf(idn); 
                     nota.setAttribute("id", sIdn);
                     
-                   nota.appendChild(xml.createTextNode(notas[i]));
+                   nota.appendChild(xml.createTextNode("TOTTI TOTTI TOTTI SUBNORMAL"));
                 }
                 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
