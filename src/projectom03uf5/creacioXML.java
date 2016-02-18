@@ -34,14 +34,23 @@ public class creacioXML  {
             xml.appendChild(elementArrel);
                 
                  
-                for(int i=0;i<20;i++){
+                for(int i=0;i<_key.size();i++){
                     Element nota = xml.createElement("nota");
                     elementArrel.appendChild(nota);
                     int idn=i+1; 
                     String sIdn = String.valueOf(idn); 
                     nota.setAttribute("id", sIdn);
+                    Element name = xml.createElement("name");
+                    nota.appendChild(name);
                     
-                   nota.appendChild(xml.createTextNode("TOTTI TOTTI TOTTI SUBNORMAL"));
+                    System.out.println(_nameKey.get(i));
+                    name.appendChild(xml.createTextNode((String) _nameKey.get(i)));
+                    Element key = xml.createElement("key");
+                    nota.appendChild(key);
+                    String keyString=_key.get(i).toString();
+                    
+                    key.appendChild(xml.createTextNode(keyString));
+                    
                 }
                 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();

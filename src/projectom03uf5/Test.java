@@ -42,7 +42,7 @@ public class Test {
         int trackNumber = 0;
         for (Track track :  sequence.getTracks()) {
             trackNumber++;
-            System.out.println("Track " + trackNumber + ": size = " + track.size());
+            System.out.println(this.keySong.size()+"Track " + trackNumber + ": size = " + track.size());
             System.out.println();
             for (int i=0; i < track.size(); i++) { 
                 MidiEvent event = track.get(i);
@@ -60,19 +60,19 @@ public class Test {
                         String noteName = NOTE_NAMES[note];
                         this.keyChar.add(noteName);
                         int velocity = sm.getData2();
-                        System.out.println("Note on, " + noteName + octave + " key=" + key + " velocity: " + velocity);
+                        System.out.println(i+" "+this.keySong.size() +" Note on, " + noteName + octave + " key=" + key + " velocity: " + velocity);
                     } else if (sm.getCommand() == NOTE_OFF) {
                         int key = sm.getData1();
                         int octave = (key / 12)-1;
                         int note = key % 12;
                         String noteName = NOTE_NAMES[note];
                         int velocity = sm.getData2();
-                        System.out.println("Note off, " + noteName + octave + " key=" + key + " velocity: " + velocity);
+                        System.out.println(" Note off, " + noteName + octave + " key=" + key + " velocity: " + velocity);
                     } else {
                         System.out.println("Command:" + sm.getCommand());
                     }
                 } else {
-                    System.out.println("Other message: " + message.getClass());
+                    System.out.println(this.keySong.size()+" Other message: " + message.getClass());
                 }
             }
 

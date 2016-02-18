@@ -13,5 +13,6 @@ public class Main {
     public static void main(String[] agrs) {
         Test test = new Test("test.mid");
         creacioXML xml = new creacioXML(test.getKeySong(),test.getKeyChar());
+        Piano piano = new Piano("song.xml");
     }
 }
