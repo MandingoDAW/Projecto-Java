@@ -22,8 +22,11 @@ public class Nota {
     int volume = 400; // between 0 et 127
     int pitch;
 
-    public Nota() {
-       
+   public Nota(String nom, int channel, int volume, int pitch) {
+        this.nom=nom;
+        this.channel=channel;
+        this.volume=volume;
+        this.pitch=pitch;
         
     }
 
@@ -59,188 +62,19 @@ public class Nota {
         this.pitch = pitch;
     }
     
-       public void tocarDo(){
+    public void tocar(){
        
-        try {
+            try {
 			Synthesizer synth = MidiSystem.getSynthesizer();
 			synth.open();
 			MidiChannel[] channels = synth.getChannels();
                         
-                        channels[0].noteOn( 72, 400 ); // C note
+                        channels[0].noteOn( this.pitch, this.volume ); // C note
        
-    }catch (Exception e) {
+            }catch (Exception e) {
 			e.printStackTrace();
 		}
 
      
-}
-  
-    public void tocarDoSostenido(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 61, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    public void tocarRe(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 62, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    public void tocarReSostenido(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 63, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    public void tocarMi(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 76, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    
-    public void tocarFa(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 65, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    
-    public void tocarFaSostenido(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 66, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    public void tocarSol(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 67, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    public void tocarSolSostenido(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 56, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    public void tocarLa(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 69, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    public void tocarLaSostenido(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 70, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    public void tocarSi(){
-       
-        try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.open();
-			MidiChannel[] channels = synth.getChannels();
-                        
-                        channels[0].noteOn( 71, 400 ); // C note
-       
-    }catch (Exception e) {
-			e.printStackTrace();
-		}
-
-     
-}
-    
+    }  
 }

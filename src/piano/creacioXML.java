@@ -13,16 +13,28 @@ import javax.xml.transform.stream.StreamResult;
  
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * Clase que crea un xml referent a les notes mitjançant JAXP i DOM
  * @author Sergi Vicente, Oriol Mejías i Eric Pérez.
  * @version 1.0 04/02/2016
  */
+public class creacioXML{
+    private String pathname;
+    private ArrayList key;
+    private ArrayList nameKey;
+    
+    public creacioXML(String _pathName,ArrayList _key, ArrayList _nameKey){
+        this.key=_key;
+        this.nameKey=_nameKey;
+        this.pathname=_pathName;
+        creacio(_key,_nameKey);
+        cargarXml(_pathName); 
+    }
 
-public class creacioXML  {
-
-    public creacioXML(ArrayList _key, ArrayList _nameKey) {
+    public void creacio(ArrayList _key, ArrayList _nameKey) {
 
         int sized=_nameKey.size();
         try {
@@ -68,5 +80,38 @@ public class creacioXML  {
 		tfe.printStackTrace();
 	  }
         
+    }
+    
+    public void cargarXml(String _pathName) {
+        try {
+            File song = new File(_pathName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(song);
+            doc.getDocumentElement().normalize();
+
+            System.out.println("arrel " + doc.getDocumentElement().getNodeName());
+            NodeList nodes = doc.getElementsByTagName("nota");
+            System.out.println("==========================");
+
+            for (int i = 0; i < nodes.getLength(); i++) {
+                Node node = nodes.item(i);
+
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element element = (Element) node;
+                    System.out.println("nota lletra: " + obtenirContingut("name", element));
+                    System.out.println("nota numero: " + obtenirContingut("key", element));
+                   
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private static String obtenirContingut(String etiqueta, Element element) {
+        NodeList nodes = element.getElementsByTagName(etiqueta).item(0).getChildNodes();
+        Node node = (Node) nodes.item(0);
+        return node.getNodeValue();
     }
 }

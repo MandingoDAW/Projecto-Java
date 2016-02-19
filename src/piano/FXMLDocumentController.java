@@ -68,21 +68,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         
-        Nota Do = new Nota();
-        Nota DoSostenido = new Nota();
-        Nota Re = new Nota();
-        Nota ReSostenido = new Nota();
-        Nota Mi = new Nota();
-        Nota Fa = new Nota();
-        Nota FaSostenido = new Nota();
-        Nota Sol = new Nota();
-        Nota SolSostenido = new Nota();
-        Nota La = new Nota();
-        Nota LaSostenido = new Nota();
-        Nota Si = new Nota();
-        Test test = new Test("test.mid");
-        creacioXML xml = new creacioXML(test.getKeySong(),test.getKeyChar());
-        Piano piano = new Piano("song.xml");
+      
         
         
         tecla1.setOnAction(new EventHandler<ActionEvent>() {
@@ -90,7 +76,7 @@ public class FXMLDocumentController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Do!");
-                Do.tocarDo();
+                //Do.tocar();
                 
             }
         });
@@ -99,8 +85,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                DoSostenido.tocarDoSostenido();
+                System.out.println("Re!");
+                //DoS.tocar();
                 
             }
         });
@@ -110,8 +96,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                Re.tocarRe();
+                System.out.println("Mi!");
+                //re.tocar();
                 
             }
         });
@@ -120,8 +106,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                ReSostenido.tocarReSostenido();
+                System.out.println("Fa!");
+                //reS.tocar();
                 
             }
         });
@@ -129,8 +115,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                Mi.tocarMi();
+                System.out.println("Sol!");
+                //mi.tocarMi();
                 
             }
         });
@@ -138,8 +124,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                Fa.tocarFa();
+                System.out.println("La!");
+                //fa.tocar();
                 
             }
         });
@@ -147,8 +133,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                FaSostenido.tocarFaSostenido();
+                System.out.println("Si!");
+                //faS.tocar();
                 
             }
         });
@@ -156,8 +142,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                Sol.tocarSol();
+                System.out.println("Re#!");
+                //sol.tocar();
                 
             }
         });
@@ -165,8 +151,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                SolSostenido.tocarSolSostenido();
+                System.out.println("Fa#!");
+                //solS.tocar();
                 
             }
         });
@@ -174,8 +160,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                La.tocarLa();
+                System.out.println("Sol#!");
+                //la.tocar();
                 
             }
         });
@@ -183,8 +169,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                LaSostenido.tocarLaSostenido();
+                System.out.println("La#!");
+                //laS.tocarLaSostenido();
                 
             }
         });
@@ -192,8 +178,8 @@ public class FXMLDocumentController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
-                Si.tocarSi();
+                System.out.println("Do#!");
+                //si.tocar();
                 
             }
         });

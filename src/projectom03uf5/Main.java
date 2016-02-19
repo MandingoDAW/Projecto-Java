@@ -13,7 +13,7 @@ import static javafx.application.Application.launch;
  * @author usuario
  */
 public class Main {
-    /*public static void main(String[] agrs) {
+    public static void main(String[] agrs) {
         
         Test test = new Test("test.mid");
         creacioXML xml = new creacioXML(test.getKeySong(),test.getKeyChar());
@@ -61,7 +61,7 @@ public class Main {
 
 
                 return map;
-        }*/
+        }
 
         
     
