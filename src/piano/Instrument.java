@@ -9,6 +9,6 @@ package piano;
  *
  * @author usuario
  */
-public class Instrument {
+public abstract class Instrument {
     
 }

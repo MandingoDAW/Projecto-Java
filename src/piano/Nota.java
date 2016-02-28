@@ -15,18 +15,19 @@ import javax.sound.midi.Synthesizer;
  *
  * @author Eric
  */
-public class Nota {
+public class Nota extends Piano {
     
     String nom;
     int channel = 0; // 0 is a piano, 9 is percussion, other channels are for other instruments
     int volume = 400; // between 0 et 127
     int pitch;
 
-   public Nota(String nom, int channel, int volume, int pitch) {
+   public Nota(String nom, int channel,int pitch, int volume) {
         this.nom=nom;
         this.channel=channel;
         this.volume=volume;
         this.pitch=pitch;
+        System.out.println(this.pitch);
         
     }
 
@@ -69,7 +70,8 @@ public class Nota {
 			synth.open();
 			MidiChannel[] channels = synth.getChannels();
                         
-                        channels[0].noteOn( this.pitch, this.volume ); // C note
+                        channels[this.channel].noteOn( this.pitch , this.volume ); // C note
+                        
        
             }catch (Exception e) {
 			e.printStackTrace();
