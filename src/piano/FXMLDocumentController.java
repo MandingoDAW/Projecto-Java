@@ -74,15 +74,15 @@ public class FXMLDocumentController<T> implements Initializable {
         Nota<Integer> Do = new Nota<>(1 , 0, 72, 400);
         Nota<String> DoS = new Nota<>("Do#", 0, 73, 400);
         Nota<Integer> re = new Nota<>(2, 0, 74, 400);
-        Nota<String> ReS = new Nota<>("Re#", 0, 73, 400);
-        Nota<Integer> mi = new Nota<>(3, 0, 74, 400);
-        Nota<Integer> fa = new Nota<>(4, 0, 73, 400);
-        Nota<String> faS = new Nota<>("Fa#", 0, 74, 400);
-        Nota<Integer> sol = new Nota<>(5, 0, 73, 400);
-        Nota<String> solS = new Nota<>("Sol#", 0, 74, 400);
-        Nota<Integer> la = new Nota<>(6, 0, 73, 400);//C#
-        Nota<String> laS = new Nota<>("La#", 0, 74, 400);//D
-        Nota<Integer> si = new Nota<>(7, 0, 73, 400);//C#
+        Nota<String> ReS = new Nota<>("Re#", 0, 75, 400);
+        Nota<Integer> mi = new Nota<>(3, 0, 76, 400);
+        Nota<Integer> fa = new Nota<>(4, 0, 77, 400);
+        Nota<String> faS = new Nota<>("Fa#", 0, 78, 400);
+        Nota<Integer> sol = new Nota<>(5, 0, 79, 400);
+        Nota<String> solS = new Nota<>("Sol#", 0, 80, 400);
+        Nota<Integer> la = new Nota<>(6, 0, 81, 400);//C#
+        Nota<String> laS = new Nota<>("La#", 0, 82, 400);//D
+        Nota<Integer> si = new Nota<>(7, 0, 83, 400);//C#
         
         // initialize of hashmap
         //map = new HashMap<String, Nota>();
