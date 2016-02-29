@@ -10,6 +10,7 @@ package piano;
 import java.util.Stack;
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
+import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 
 /**
@@ -25,6 +26,7 @@ public class Nota<T> extends Piano {
     int pitch;
     static Stack pila = new Stack();//array para poner las notas que vas tocando
     private String a[] = {};
+    private int duration = 200;
 
    public Nota(T nom, int channel,int pitch, int volume) {
         this.channel=channel;
@@ -69,7 +71,8 @@ public class Nota<T> extends Piano {
     @Override
     public void tocar(){
        
-            try {       System.out.println("Esta sonant");
+            try {     
+                        System.out.println("Esta sonant");
 			Synthesizer synth = MidiSystem.getSynthesizer();
 			synth.open();
 			MidiChannel[] channels = synth.getChannels();
@@ -88,9 +91,26 @@ public class Nota<T> extends Piano {
             
     }  
     
-   // public void grabacio(String _pathName,) {
+   public void grabacio() throws MidiUnavailableException, InterruptedException,ExcepcioPropia {//llençem l'excepció propia
+      int sized=pila.size();
+      
+    for(int i=0;i<sized;i++){
+        //System.out.println(sized);
+        Synthesizer synth = MidiSystem.getSynthesizer();
+        synth.open();
+        MidiChannel[] channels = synth.getChannels();
+        int s=(Integer)pila.get(i);
+        if(s==0){
+           throw new ExcepcioPropia("La nota no sonara per que es 0"); 
+        }
+        
+       channels[this.channel].noteOn( s , this.volume );
+       Thread.sleep( duration );
+ 
+    }
+       
     
-    //}
+   }
 
     public static Stack getPila() {
         return pila;

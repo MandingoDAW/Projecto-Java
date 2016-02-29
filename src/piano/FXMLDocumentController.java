@@ -11,12 +11,15 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javax.sound.midi.MidiUnavailableException;
 import static jdk.nashorn.internal.objects.NativeArray.map;
 //import static piano.Piano.Do;
 
@@ -83,7 +86,7 @@ public class FXMLDocumentController<T> implements Initializable {
         Nota<Integer> la = new Nota<>(6, 0, 81, 400);//C#
         Nota<String> laS = new Nota<>("La#", 0, 82, 400);//D
         Nota<Integer> si = new Nota<>(7, 0, 83, 400);//C#
-        
+        Nota<String> Master = new Nota<>("Master", 0, 0, 400);
         // initialize of hashmap
         //map = new HashMap<String, Nota>();
         // assign each student id as key and the student objects as values on
@@ -238,7 +241,17 @@ public class FXMLDocumentController<T> implements Initializable {
                 //xml.creacio(_key, _nameKey);
                 //xml.cargarXml(_pathName);
                 System.out.println("XML");
-                
+                try {
+                    try {
+                        Master.grabacio();
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (ExcepcioPropia ex) {
+                        Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } catch (MidiUnavailableException ex) {
+                    Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
                 
             }
