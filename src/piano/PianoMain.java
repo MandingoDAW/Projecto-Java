@@ -30,17 +30,18 @@ public class PianoMain extends Application {
         stage.setScene(scene);
         stage.show();
         
+        
     }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        
+        //Nota Fe = new Nota("Fe", 0, 74, 400);
         launch(args);
-        Piano piano=new Piano();
-        Test test = new Test("test.mid");
-        creacioXML xml = new creacioXML("test.mid",test.getKeySong(),test.getKeyChar());
+        
+        //Piano piano=new Piano();
+        
         /*Nota Do = new Nota("Do", 0, 72, 400);//C
         Nota DoS = new Nota("Do#", 0, 73, 400);//C#
         Nota re = new Nota("Re", 0, 74, 400);//D

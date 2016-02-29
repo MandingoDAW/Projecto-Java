@@ -125,6 +125,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      
       <Button fx:id="tecla13" layoutX="24.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="MidiXML" />
    </children>
    <effect>

@@ -13,11 +13,16 @@ import org.w3c.dom.NodeList;
  *
  * @author usuario
  */
-public class Piano extends Instrument{
+public abstract class Piano extends Instrument{
   
-  private String keyName;
-  private String pathMidi = "";
-  public static Nota Do;
+  //private String keyName;
+  //private String pathMidi = "";
+  //public static Nota Do;
+    String nom;
+    int channel; // 0 is a piano, 9 is percussion, other channels are for other instruments
+    int volume ; // between 0 et 127
+    int pitch;
+    
   /*
   public HashMap<String, Nota> map;
 
@@ -61,7 +66,7 @@ public class Piano extends Instrument{
   
     */
    
-    
+     public abstract void tocar();
    
 }
 

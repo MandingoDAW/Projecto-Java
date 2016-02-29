@@ -108,6 +108,8 @@ public class creacioXML{
             ex.printStackTrace();
         }
     }
+    
+    
 
     private static String obtenirContingut(String etiqueta, Element element) {
         NodeList nodes = element.getElementsByTagName(etiqueta).item(0).getChildNodes();

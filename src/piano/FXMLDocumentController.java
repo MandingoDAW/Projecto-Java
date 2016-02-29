@@ -238,7 +238,9 @@ public class FXMLDocumentController implements Initializable {
                        
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Do!");
+                //Test test = new Test("test.mid");
+                //creacioXML xml = new creacioXML("test.mid",test.getKeySong(),test.getKeyChar());
+                System.out.println("XML");
                 
                 
                 
