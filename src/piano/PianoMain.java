@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Eric
+ * @author Eric, Oriol, Sergi
  */
 public class PianoMain extends Application {
     
@@ -30,6 +30,8 @@ public class PianoMain extends Application {
         stage.setScene(scene);
         stage.show();
         
+        Bienvenida saludador = new Bienvenida();//instanciamos la clase externa
+        saludador.Saludar(); //Llamamos al método que crea la clase interna
         
     }
 
@@ -37,31 +39,7 @@ public class PianoMain extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        //Nota Fe = new Nota("Fe", 0, 74, 400);
         launch(args);
-        
-        //Piano piano=new Piano();
-        
-        /*Nota Do = new Nota("Do", 0, 72, 400);//C
-        Nota DoS = new Nota("Do#", 0, 73, 400);//C#
-        Nota re = new Nota("Re", 0, 74, 400);//D
-        Nota reS = new Nota("Re#", 0, 75, 400);//D#
-        Nota mi = new Nota("Mi", 0, 76, 400);//E
-        Nota fa = new Nota("Fa", 0, 77, 400);//F
-        Nota faS = new Nota("Fa#", 0, 78, 400);//F#
-        Nota sol = new Nota("Sol", 0, 79, 400);//G
-        Nota solS = new Nota("Sol#", 0, 80, 400);//G#
-        Nota la = new Nota("La", 0, 81, 400);//A
-        Nota laS = new Nota("La#", 0, 82, 400);//A#
-        Nota si = new Nota("Si", 0, 83, 400);*/
-        
-        /*HashMap<String, Nota> map = new HashMap<String, Nota>();
-		map = init();
-		// iterate to all the keys stored on our hashmap
-		for (String s : map.keySet()) {
-	
-		}*/
-	
     }
    
 }

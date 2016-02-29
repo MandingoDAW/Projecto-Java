@@ -18,10 +18,10 @@ public abstract class Piano extends Instrument{
   //private String keyName;
   //private String pathMidi = "";
   //public static Nota Do;
-    String nom;
-    int channel; // 0 is a piano, 9 is percussion, other channels are for other instruments
-    int volume ; // between 0 et 127
-    int pitch;
+    public String nom;
+    public int channel; // 0 is a piano, 9 is percussion, other channels are for other instruments
+    public int volume ; // between 0 et 127
+    public int pitch;
     
   /*
   public HashMap<String, Nota> map;
@@ -65,7 +65,9 @@ public abstract class Piano extends Instrument{
     }
   
     */
-   
+  
+    
+ 
      public abstract void tocar();
    
 }

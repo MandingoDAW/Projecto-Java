@@ -15,18 +15,18 @@ import javax.sound.midi.Synthesizer;
 /**
  *
  * @author Eric
+ * @param <T>
  */
-public class Nota extends Piano {
+public class Nota<T> extends Piano {
     
-    String nom;
-    int channel = 0; // 0 is a piano, 9 is percussion, other channels are for other instruments
+    public T nom;
+    public int channel = 0; // 0 is a piano, 9 is percussion, other channels are for other instruments
     int volume = 400; // between 0 et 127
     int pitch;
     static Stack pila = new Stack();//array para poner las notas que vas tocando
     private String a[] = {};
 
-   public Nota(String nom, int channel,int pitch, int volume) {
-        this.nom=nom;
+   public Nota(T nom, int channel,int pitch, int volume) {
         this.channel=channel;
         this.volume=volume;
         this.pitch=pitch;
@@ -34,11 +34,11 @@ public class Nota extends Piano {
         
     }
 
-    public String getNom() {
+    public T getNom() {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setNom(T nom) {
         this.nom = nom;
     }
 
@@ -66,6 +66,7 @@ public class Nota extends Piano {
         this.pitch = pitch;
     }
     
+    @Override
     public void tocar(){
        
             try {       System.out.println("Esta sonant");
@@ -84,6 +85,7 @@ public class Nota extends Piano {
 		}
 
      
+            
     }  
     
    // public void grabacio(String _pathName,) {

@@ -23,13 +23,11 @@ import static jdk.nashorn.internal.objects.NativeArray.map;
 
 /**
  *
- * @author Eric
+ * @author Eric, Oriol, Sergi
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController<T> implements Initializable {
     
-    @FXML
-    private Label label;
-    
+   
     @FXML
     private Button tecla1;
     
@@ -68,54 +66,48 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Button tecla13;
-    //Do.getNom();
-    /*private HashMap<String, Nota> map;
     
-        Nota Do = new Nota("Do", 0, 72, 400);//C
-        Nota DoS = new Nota("Do#", 0, 73, 400);//C#
-        Nota re = new Nota("Re", 0, 74, 400);//D
-        Nota reS = new Nota("Re#", 0, 75, 400);//D#
-        Nota mi = new Nota("Mi", 0, 76, 400);//E
-        Nota fa = new Nota("Fa", 0, 77, 400);//F
-        Nota faS = new Nota("Fa#", 0, 78, 400);//F#
-        Nota sol = new Nota("Sol", 0, 79, 400);//G
-        Nota solS = new Nota("Sol#", 0, 80, 400);//G#
-        Nota la = new Nota("La", 0, 81, 400);//A
-        Nota laS = new Nota("La#", 0, 82, 400);//A#
-        Nota si = new Nota("Si", 0, 83, 400);
+
+//Do.getNom();
+    private HashMap<T, Nota> map;
+    
+        Nota<Integer> Do = new Nota<>(1 , 0, 72, 400);
+        Nota<String> DoS = new Nota<>("Do#", 0, 73, 400);
+        Nota<Integer> re = new Nota<>(2, 0, 74, 400);
+        Nota<String> ReS = new Nota<>("Re#", 0, 73, 400);
+        Nota<Integer> mi = new Nota<>(3, 0, 74, 400);
+        Nota<Integer> fa = new Nota<>(4, 0, 73, 400);
+        Nota<String> faS = new Nota<>("Fa#", 0, 74, 400);
+        Nota<Integer> sol = new Nota<>(5, 0, 73, 400);
+        Nota<String> solS = new Nota<>("Sol#", 0, 74, 400);
+        Nota<Integer> la = new Nota<>(6, 0, 73, 400);//C#
+        Nota<String> laS = new Nota<>("La#", 0, 74, 400);//D
+        Nota<Integer> si = new Nota<>(7, 0, 73, 400);//C#
+        
         // initialize of hashmap
         //map = new HashMap<String, Nota>();
         // assign each student id as key and the student objects as values on
         // our hashmap
-        map.put(Do.getNom(), Do);
-        map.put(DoS.getNom(), DoS);
-        map.put(re.getNom(), re);
-        map.put(reS.getNom(), reS);
-        map.put(mi.getNom(), mi);
-        map.put(fa.getNom(), fa);
-        map.put(faS.getNom(), faS);
-        map.put(sol.getNom(), sol);
-        map.put(solS.getNom(), solS);
-        map.put(la.getNom(), la);
-        map.put(laS.getNom(), laS);
-        map.put(si.getNom(), si);*/
+        
     
     //map=piano.getMap();
     @FXML
     private void handleButtonAction(ActionEvent event) {
         
-        Nota Do = new Nota("Do", 0, 72, 400);//C
-        Nota DoS = new Nota("Do#", 0, 73, 400);//C#
-        Nota re = new Nota("Re", 0, 74, 400);//D
-        Nota reS = new Nota("Re#", 0, 75, 400);//D#
-        Nota mi = new Nota("Mi", 0, 76, 400);//E
-        Nota fa = new Nota("Fa", 0, 77, 400);//F
-        Nota faS = new Nota("Fa#", 0, 78, 400);//F#
-        Nota sol = new Nota("Sol", 0, 79, 400);//G
-        Nota solS = new Nota("Sol#", 0, 80, 400);//G#
-        Nota la = new Nota("La", 0, 81, 400);//A
-        Nota laS = new Nota("La#", 0, 82, 400);//A#
-        Nota si = new Nota("Si", 0, 83, 400);
+        map = new HashMap<>();
+        
+        map.put((T) "Do", Do);
+        map.put((T) DoS.getNom(), DoS);
+        map.put((T) re.getNom(), re);
+        map.put((T) ReS.getNom(), ReS);
+        map.put((T) mi.getNom(), mi);
+        map.put((T) fa.getNom(), fa);
+        map.put((T) faS.getNom(), faS);
+        map.put((T) sol.getNom(), sol);
+        map.put((T) solS.getNom(), solS);
+        map.put((T) la.getNom(), la);
+        map.put((T) laS.getNom(), laS);
+        map.put((T) si.getNom(), si);
         
         
         tecla1.setOnAction(new EventHandler<ActionEvent>() {
@@ -124,8 +116,10 @@ public class FXMLDocumentController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Do!");
-                //map.get("Do");          
+                //map.get("Do");
                 Do.tocar();
+               
+                
                 
                 
             }
@@ -193,7 +187,7 @@ public class FXMLDocumentController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Re#!");
-                reS.tocar();
+                ReS.tocar();
                 
             }
         });
@@ -229,6 +223,7 @@ public class FXMLDocumentController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Do#!");
+                DoS.setNom("DoSostenido");
                 DoS.tocar();
                 
             }
@@ -240,6 +235,8 @@ public class FXMLDocumentController implements Initializable {
             public void handle(ActionEvent event) {
                 //Test test = new Test("test.mid");
                 //creacioXML xml = new creacioXML("test.mid",test.getKeySong(),test.getKeyChar());
+                //xml.creacio(_key, _nameKey);
+                //xml.cargarXml(_pathName);
                 System.out.println("XML");
                 
                 
