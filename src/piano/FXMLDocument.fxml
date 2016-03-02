@@ -7,11 +7,18 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" accessibleRole="BUTTON" prefHeight="504.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="piano.FXMLDocumentController">
+<AnchorPane id="AnchorPane" accessibleRole="BUTTON" prefHeight="650.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="piano.FXMLDocumentController">
    <children>
-      <MenuBar layoutX="-2.0" prefHeight="28.0" prefWidth="1102.0">
+      <ImageView fitHeight="150.0" fitWidth="581.0" layoutX="47.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/piano.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutX="-1.0" prefHeight="28.0" prefWidth="690.0">
         <menus>
           <Menu mnemonicParsing="false" text="Arxiu">
             <items>
@@ -30,42 +37,42 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button id="Do" fx:id="tecla1" layoutX="196.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
+      <Button id="Do" fx:id="tecla1" layoutX="196.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
          <cursor>
-            <Cursor fx:constant="HAND" />
+           
          </cursor>
       </Button>
-      <Button id="Re" fx:id="tecla2" layoutX="241.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
+      <Button id="Re" fx:id="tecla2" layoutX="237.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="Mi" fx:id="tecla3" layoutX="286.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
+      <Button id="Mi" fx:id="tecla3" layoutX="282.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="Fa" fx:id="tecla4" layoutX="331.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
+      <Button id="Fa" fx:id="tecla4" layoutX="336.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="Sol" fx:id="tecla5" layoutX="376.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
+      <Button id="Sol" fx:id="tecla5" layoutX="381.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="La" fx:id="tecla6" layoutX="421.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
+      <Button id="La" fx:id="tecla6" layoutX="426.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="Si" fx:id="tecla7" layoutX="466.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
+      <Button id="Si" fx:id="tecla7" layoutX="471.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="260.0" prefWidth="45.0">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="ReSostenido" fx:id="tecla8" layoutX="268.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0">
+      <Button id="ReSostenido" fx:id="tecla8" layoutX="264.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0">
          <effect>
             <ColorAdjust brightness="-1.0" contrast="-1.0" hue="-1.0" saturation="-1.0">
                <input>
@@ -74,10 +81,10 @@
             </ColorAdjust>
          </effect>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="FaSostenido" fx:id="tecla9" layoutX="358.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0">
+      <Button id="FaSostenido" fx:id="tecla9" layoutX="363.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0">
          <effect>
             <ColorAdjust brightness="-1.0">
                <input>
@@ -86,10 +93,10 @@
             </ColorAdjust>
          </effect>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="SolSostenido" fx:id="tecla10" layoutX="403.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0">
+      <Button id="SolSostenido" fx:id="tecla10" layoutX="408.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0">
          <effect>
             <ColorAdjust brightness="-1.0">
                <input>
@@ -98,10 +105,10 @@
             </ColorAdjust>
          </effect>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="LaSostenido" fx:id="tecla11" layoutX="448.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0">
+      <Button id="LaSostenido" fx:id="tecla11" layoutX="453.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0">
          <effect>
             <ColorAdjust brightness="-1.0">
                <input>
@@ -110,10 +117,10 @@
             </ColorAdjust>
          </effect>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
-      <Button id="DoSostenido" fx:id="tecla12" defaultButton="true" layoutX="223.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0" textOverrun="CLIP">
+      <Button id="DoSostenido" fx:id="tecla12" defaultButton="true" layoutX="219.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="152.0" prefWidth="36.0" textOverrun="CLIP">
          <effect>
             <ColorAdjust brightness="-1.0" contrast="-1.0" hue="-1.0" saturation="-1.0">
                <input>
@@ -122,11 +129,11 @@
             </ColorAdjust>
          </effect>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
       </Button>
       
-      <Button fx:id="tecla13" layoutX="24.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="MidiXML" />
+      <Button fx:id="tecla13" layoutX="284.0" layoutY="559.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="124.0" text="Secuencia Grabada" />
    </children>
    <effect>
       <DropShadow />

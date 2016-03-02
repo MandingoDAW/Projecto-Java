@@ -25,11 +25,15 @@ import static jdk.nashorn.internal.objects.NativeArray.map;
 
 
 /**
- *
+ * Classe per controllar els botons del piano
  * @author Eric, Oriol, Sergi
  */
 public class FXMLDocumentController<T> implements Initializable {
     
+/**
+ * Vinculem els botons creats al FXML per manipular el seu comportament amb events
+ * @author Eric, Oriol, Sergi
+ */
    
     @FXML
     private Button tecla1;
@@ -112,6 +116,11 @@ public class FXMLDocumentController<T> implements Initializable {
         map.put((T) laS.getNom(), laS);
         map.put((T) si.getNom(), si);
         
+/**
+ * Quan es premi el boto corresponent instanciarà el mètode de la classe Nota tocar()
+ * 
+ * @author Eric, Oriol, Sergi
+ */
         
         tecla1.setOnAction(new EventHandler<ActionEvent>() {
             
