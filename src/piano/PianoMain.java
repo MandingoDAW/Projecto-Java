@@ -7,7 +7,7 @@ package piano;
 
 import java.util.HashMap;
 import javafx.application.Application;
-import javafx.event.EventType;
+//import javafx.event.EventType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

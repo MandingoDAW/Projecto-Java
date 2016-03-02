@@ -7,6 +7,7 @@ package piano;
  */
 
 
+import java.util.Comparator;
 import java.util.Stack;
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
@@ -21,6 +22,7 @@ import javax.sound.midi.Synthesizer;
 public class Nota<T> extends Piano {
     
     public T nom;
+    public String nomarray;
     public int channel = 0; // 0 is a piano, 9 is percussion, other channels are for other instruments
     int volume = 400; // between 0 et 127
     int pitch;
@@ -34,7 +36,12 @@ public class Nota<T> extends Piano {
         this.pitch=pitch;
         System.out.println(this.pitch);
         
+        
     }
+   
+   public Nota(String nomarray){
+       this.nomarray=nomarray;
+   }
 
     public T getNom() {
         return nom;
@@ -67,6 +74,17 @@ public class Nota<T> extends Piano {
     public void setPitch(int pitch) {
         this.pitch = pitch;
     }
+
+    public String getNomarray() {
+        return nomarray;
+    }
+
+    public void setNomarray(String nomarray) {
+        this.nomarray = nomarray;
+    }
+    
+    
+    
     
     @Override
     public void tocar(){
@@ -116,5 +134,21 @@ public class Nota<T> extends Piano {
         return pila;
     }
 
+    
+    public static Comparator<Nota> Snom = new Comparator<Nota>() {
+
+        @Override
+        public int compare(Nota l1, Nota l2) {
+            String nomNota = l1.getNomarray().toUpperCase();
+            String nomNota2 = l2.getNomarray().toUpperCase();
+            return nomNota.compareTo(nomNota2);
+        }
+    };
+
+    @Override
+    public String toString() {
+        return "Nom: " + nomarray ;
+    }
+    
     
 }

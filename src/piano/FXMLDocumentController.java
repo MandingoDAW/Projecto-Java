@@ -8,7 +8,9 @@ package piano;
 
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -73,6 +75,9 @@ public class FXMLDocumentController<T> implements Initializable {
     
     @FXML
     private Button tecla13;
+    
+    @FXML
+    private Button tecla14;
     
 
 //Do.getNom();
@@ -265,12 +270,46 @@ public class FXMLDocumentController<T> implements Initializable {
                 
             }
         });
+                   
+            tecla14.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                ArrayList<Nota> arraylist = new ArrayList<Nota>();
+            
+                arraylist.add(new Nota("Do"));
+                arraylist.add(new Nota("Do Sostingut"));
+                arraylist.add(new Nota("Re"));
+                arraylist.add(new Nota("Re Sostingut"));
+                arraylist.add(new Nota("Mi"));
+                arraylist.add(new Nota("Fa"));
+                arraylist.add(new Nota("Fa Sostingut"));
+                arraylist.add(new Nota("Sol"));
+                arraylist.add(new Nota("Sol Sostingut"));
+                arraylist.add(new Nota("La"));
+                arraylist.add(new Nota("La Sostingut"));
+                arraylist.add(new Nota("Si"));
+                
+                
+                
+                System.out.println("Ordre per el Nom");
+                Collections.sort(arraylist, Nota.Snom);
+                
+            
+                arraylist.stream().forEach((str) -> {
+                    System.out.println(str);
+            });
+
+                
+            }
+        });
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     
       
     
